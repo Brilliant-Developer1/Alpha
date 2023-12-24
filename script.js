@@ -1,8 +1,7 @@
-// script.js
 function generateSVGIcons() {
   const mainBox = document.getElementById('mainBox');
 
-  // List of SVG strings
+  // List of SVG
   const svgIcons = [
     '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-letter-a" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fdcb6e" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M10 16v-6a2 2 0 1 1 4 0v6" /><path d="M10 13h4" /></svg>',
     '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-letter-b" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6c5ce7" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M10 16h2a2 2 0 1 0 0 -4h-2h2a2 2 0 1 0 0 -4h-2v8z" /></svg>',
@@ -32,15 +31,14 @@ function generateSVGIcons() {
     '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-letter-z" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#636e72" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M10 8h4l-4 8h4" /></svg>',
   ];
 
-  function getRandomColor() {
-    return selectiveColors[Math.floor(Math.random() * selectiveColors.length)];
-  }
-
-  // Loop through the SVG strings and create SVG elements
-  svgIcons.forEach(svgString => {
+  svgIcons.forEach((svgString, index) => {
+    const keyCode = 65 + index; // ASCII code
     const svgElement = new DOMParser()
       .parseFromString(svgString, 'image/svg+xml')
       .querySelector('svg');
+
+    // Set key-code attribute
+    svgElement.setAttribute('key-code', keyCode);
 
     mainBox.appendChild(svgElement);
   });
