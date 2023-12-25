@@ -33,15 +33,18 @@ function generateSVGIcons() {
 
   svgIcons.forEach((svgString, index) => {
     const keyCode = 65 + index; // ASCII code
+    const svgBox = document.createElement('div');
+    svgBox.setAttribute('class', 'svg_box');
     const svgElement = new DOMParser()
       .parseFromString(svgString, 'image/svg+xml')
       .querySelector('svg');
 
     // Set key-code attribute
     svgElement.setAttribute('key-code', keyCode);
+    svgBox.appendChild(svgElement);
+    mainBox.appendChild(svgBox);
 
-    mainBox.appendChild(svgElement);
-
+    // Create audio tags Element
     const audio = document.createElement('audio');
     mainBox.appendChild(audio);
     audio.setAttribute('key-code', keyCode);

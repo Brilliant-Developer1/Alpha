@@ -32,6 +32,8 @@ body {
   backdrop-filter: blur(0.5px);
 }
 
-.icon {
-  color: black;
+.svg_box {
+  width: 100px;
+  margin: 5px;
+  display: inline-block;
 }
