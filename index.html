@@ -8,7 +8,21 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <div id="mainBox"></div>
+    <div class="box_1">
+      <div>
+        <label for="blur">Blur:</label>
+        <input
+          id="blur"
+          type="range"
+          name="blur"
+          min="0"
+          max="25"
+          value="10"
+          data-sizing="px"
+        />
+      </div>
+      <div id="mainBox"></div>
+    </div>
 
     <script src="script.js"></script>
     <script src="alpha_sounds.js"></script>
@@ -17,7 +31,6 @@
     <script>
       generateSVGIcons();
       generateAudio();
-      onClick();
     </script>
   </body>
 </html>
