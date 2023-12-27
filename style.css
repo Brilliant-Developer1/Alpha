@@ -1,3 +1,6 @@
+:root {
+  --filter: 20%;
+}
 html,
 body {
   height: 100%;
@@ -8,7 +11,7 @@ html {
   background: url('./assets//background.jpg') bottom center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* filter: grayscale(100%); */
+  filter: grayscale(var(--filter));
 }
 body {
   /* display: flex;
@@ -23,13 +26,14 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 50px;
 }
 #blur {
-  margin-top: 50px;
 }
 #mainBox {
   min-height: 90vh;
   margin: 3rem;
+  margin-top: 0;
   background-color: rgba(171, 171, 171, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

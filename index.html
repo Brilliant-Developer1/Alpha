@@ -9,16 +9,16 @@
   </head>
   <body>
     <div class="box_1">
-      <div>
-        <label for="blur">Blur:</label>
+      <div class="controls">
+        <label for="filter">Filter Color:</label>
         <input
-          id="blur"
+          id="filter"
           type="range"
-          name="blur"
+          name="filter"
           min="0"
-          max="25"
-          value="10"
-          data-sizing="px"
+          max="100"
+          value="20"
+          data-sizing="%"
         />
       </div>
       <div id="mainBox"></div>
@@ -26,11 +26,12 @@
 
     <script src="script.js"></script>
     <script src="alpha_sounds.js"></script>
-    <script src="onClick.js"></script>
+    <script src="filter.js"></script>
 
     <script>
       generateSVGIcons();
       generateAudio();
+      filter();
     </script>
   </body>
 </html>
